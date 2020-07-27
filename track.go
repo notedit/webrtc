@@ -34,6 +34,8 @@ type Track struct {
 	receiver         *RTPReceiver
 	activeSenders    []*RTPSender
 	totalSenderCount int // count of all senders (accounts for senders that have not been started yet)
+
+	determineRtpPacket *rtp.Packet
 }
 
 // ID gets the ID of the track
@@ -86,6 +88,14 @@ func (t *Track) Codec() *RTPCodec {
 	t.mu.RLock()
 	defer t.mu.RUnlock()
 	return t.codec
+}
+
+// FirstRtpPacket got the first pakcet
+func (t *Track) FirstRtpPacket() *rtp.Packet {
+	t.mu.RLock()
+	rtp := t.determineRtpPacket
+	defer t.mu.RUnlock()
+	return rtp
 }
 
 // Packetizer gets the Packetizer of the track
@@ -211,6 +221,8 @@ func (t *Track) determinePayloadType() error {
 	if err != nil {
 		return err
 	}
+
+	t.determineRtpPacket = r
 
 	t.mu.Lock()
 	t.payloadType = r.PayloadType
