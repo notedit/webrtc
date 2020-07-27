@@ -14,12 +14,12 @@ import (
 	"sync"
 	"time"
 
+	"github.com/notedit/webrtc-hack/v3/pkg/mux"
+	"github.com/notedit/webrtc-hack/v3/pkg/rtcerr"
+	"github.com/notedit/webrtc-hack/v3/pkg/util"
 	"github.com/pion/dtls/v2"
 	"github.com/pion/dtls/v2/pkg/crypto/fingerprint"
 	"github.com/pion/srtp"
-	"github.com/pion/webrtc/v3/internal/mux"
-	"github.com/pion/webrtc/v3/internal/util"
-	"github.com/pion/webrtc/v3/pkg/rtcerr"
 )
 
 // DTLSTransport allows an application access to information about the DTLS

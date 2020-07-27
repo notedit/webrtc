@@ -1,4 +1,4 @@
-module github.com/pion/webrtc/v3
+module github.com/notedit/webrtc-hack/v3
 
 go 1.12
 
@@ -15,6 +15,7 @@ require (
 	github.com/pion/sdp/v2 v2.4.0
 	github.com/pion/srtp v1.5.0
 	github.com/pion/transport v0.10.1
+	github.com/pion/webrtc/v3 v3.0.0-20200721060053-ca3cc9d940bc
 	github.com/sclevine/agouti v3.0.0+incompatible
 	github.com/stretchr/testify v1.6.1
 )

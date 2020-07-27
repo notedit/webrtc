@@ -13,9 +13,9 @@ import (
 	"testing"
 	"time"
 
+	"github.com/notedit/webrtc-hack/v3/pkg/media"
+	"github.com/notedit/webrtc-hack/v3/pkg/util"
 	"github.com/pion/transport/test"
-	"github.com/pion/webrtc/v3/internal/util"
-	"github.com/pion/webrtc/v3/pkg/media"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
